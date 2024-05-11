@@ -1,4 +1,4 @@
-# PILIES WEB Vr. 2.21
+# PILIES WEB Vr. 3.0
 `<link>` : <https://piliesweb.github.io/>
 
             
@@ -15,7 +15,9 @@
 ### Notas del Parche:
 
 #### Correción de Errores y Añadidos (+)
-
+- Se renovaron varias secciones.
+- Se añadió la sección de mapa curricular
+- 
 - Se corrigió un error que redirigía a la página "Ex-Alumnos" si seleccionabas "Biblioteca Virtual".
 - Se cambiaron los colores de algunas páginas.
 - Se añadió (provicionalmente) un svg para ver el logo de la carrera en Inicio.
