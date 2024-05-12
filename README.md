@@ -1,5 +1,5 @@
-# PILIES WEB Vr. 2.21
-`<link>` : <https://anisandlers.github.io/> 
+# PILIES WEB Vr. 3.0
+`<link>` : <https://piliesweb.github.io/>
 
             
 ## Colaboradores Actuales:
@@ -15,7 +15,9 @@
 ### Notas del Parche:
 
 #### Correción de Errores y Añadidos (+)
-
+- Se renovaron varias secciones.
+- Se añadió la sección de mapa curricular.
+- Renovamos la fotos en algunas secciones.
 - Se corrigió un error que redirigía a la página "Ex-Alumnos" si seleccionabas "Biblioteca Virtual".
 - Se cambiaron los colores de algunas páginas.
 - Se añadió (provicionalmente) un svg para ver el logo de la carrera en Inicio.
@@ -24,6 +26,9 @@
 #### Futuras ideas/correciones (-)
 
 - Generales:
+  * A futuro corregir el mapa curricular.
+  * Añadir fotos correspondientes de la sección de Eventos.
+  * Añadir un MANUAL DE ESTUDIANTES con Preguntas y Respuestas.
   * Se buscará corregir el bug que no permité ver el logo de la carrera cómo ícono en el la barra de pestañas del navegador.
   * Hay una ídea, un apartado de guia de estudios para el examen de ingreso. Es general para todas las ingenierias, entonces buscarlo.
   * Un apartado "Conoce tus instalaciones" donde se muestren fotos de los laboratorios, salones, así como un mapa de CU para poder saber dónde es cada salón.
