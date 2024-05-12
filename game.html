@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="./logo1.png" type="image/svg+xml">
+    <title>Pilie The Cat´s Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100%;
+            height: 100vh;
+            background-image: url('imag/sky.gif');
+            background-size: cover;
+            position: relative;
+        }
+        #player {
+            position: absolute;
+            bottom: 20px; /* Adjust as needed */
+            left: 50%; /* Start in the middle */
+            transform: translateX(-50%);
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+        }
+        .enemy {
+            position: absolute;
+            width: 30px; /* Adjust size as needed */
+            height: auto;
+        }
+        #score {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+        }
+        #reset-btn {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #start-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 999;
+        }
+        #start-overlay h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #start-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <img src="imag/5Xyr.gif" id="player" alt="Player">
+    </div>
+    <div id="score">Score: 0</div>
+    <button id="reset-btn">Restart</button>
+
+    <div id="start-overlay">
+        <h2>¡Ayuda a Pilie The Cat a esquivar los restos del campo magnético y viento solar!</h2>
+        <button id="start-button">¡Comenzar!</button>
+    </div>
+
+    <script>
+        // Variables
+        var player = document.getElementById('player');
+        var gameContainer = document.getElementById('game-container');
+        var scoreDisplay = document.getElementById('score');
+        var resetBtn = document.getElementById('reset-btn');
+        var enemies = [];
+        var enemySpeed = 100; // Initial speed of enemies (100 times faster)
+        var timeElapsed = 0;
+        var score = 0;
+        var interval;
+
+        // Start button
+        var startButton = document.getElementById('start-button');
+        var startOverlay = document.getElementById('start-overlay');
+
+        // Function to hide start overlay and start the game
+        function startGame() {
+            startOverlay.style.display = 'none';
+            createEnemy(); // Create the first enemy
+            interval = setInterval(function() {
+                timeElapsed += 1; // Increase time elapsed by 1 second
+                updateScore();
+                createEnemy();
+                moveEnemies();
+                checkCollision();
+            }, 300); // Interval of 1 second
+        }
+
+        // Function to create enemies
+        function createEnemy() {
+            var enemy = document.createElement('img');
+            enemy.src = 'imag/Red-circle.png';
+            enemy.className = 'enemy';
+            enemy.style.top = Math.random() * (gameContainer.offsetHeight - 30) + 'px'; // Randomize vertical position
+            enemy.style.left = gameContainer.offsetWidth + 'px'; // Start from the right side of the container
+            gameContainer.appendChild(enemy);
+            enemies.push(enemy);
+        }
+
+        // Function to move enemies
+        function moveEnemies() {
+            enemies.forEach(function(enemy) {
+                var left = parseInt(enemy.style.left);
+                enemy.style.left = left - enemySpeed + 'px';
+            });
+        }
+
+        // Function to check for collision
+        function checkCollision() {
+            var playerRect = player.getBoundingClientRect();
+
+            enemies.forEach(function(enemy) {
+                var enemyRect = enemy.getBoundingClientRect();
+
+                // Check collision between player and enemy
+                if (playerRect.right >= enemyRect.left &&
+                    playerRect.left <= enemyRect.right &&
+                    playerRect.bottom >= enemyRect.top &&
+                    playerRect.top <= enemyRect.bottom) {
+                    gameOver();
+                }
+            });
+        }
+
+        // Function to update score
+        function updateScore() {
+            score++;
+            scoreDisplay.textContent = 'Score: ' + score;
+        }
+
+        // Function to end the game
+        function gameOver() {
+            clearInterval(interval);
+            alert('Game Over! Click "Restart" to play again. Your final score is: ' + score);
+            resetBtn.style.display = 'inline'; // Show the reset button
+        }
+
+        // Function to reset the game
+        function resetGame() {
+            timeElapsed = 0;
+            score = 0;
+            scoreDisplay.textContent = 'Score: ' + score;
+            enemySpeed = 100;
+            enemies.forEach(function(enemy) {
+                enemy.remove();
+            });
+            enemies = [];
+            resetBtn.style.display = 'none'; // Hide the reset button
+            startOverlay.style.display = 'flex'; // Show start overlay
+        }
+
+        // Control the player with arrow keys
+        document.addEventListener('keydown', function(event) {
+            var playerLeft = parseInt(player.style.left) || 0;
+            var playerBottom = parseInt(player.style.bottom) || 0;
+            var stepSize = 10; // Adjust step size as needed
+
+            switch(event.keyCode) {
+                case 37: // Left arrow
+                    player.style.left = Math.max(playerLeft - stepSize, 0) + 'px';
+                    break;
+                case 38: // Up arrow
+                    player.style.bottom = Math.min(playerBottom + stepSize, gameContainer.offsetHeight - player.offsetHeight) + 'px';
+                    break;
+                case 39: // Right arrow
+                    player.style.left = Math.min(playerLeft + stepSize, gameContainer.offsetWidth - player.offsetWidth) + 'px';
+                    break;
+                case 40: // Down arrow
+                    player.style.bottom = Math.max(playerBottom - stepSize, 0) + 'px';
+                    break;
+            }
+        });
+
+        // Control the player with touch on mobile devices
+        var touchStartX, touchStartY;
+
+        gameContainer.addEventListener('touchstart', function(event) {
+            touchStartX = event.touches[0].clientX;
+            touchStartY = event.touches[0].clientY;
+        });
+
+        gameContainer.addEventListener('touchmove', function(event) {
+            event.preventDefault(); // Prevent scrolling
+            var touchMoveX = event.touches[0].clientX;
+            var touchMoveY = event.touches[0].clientY;
+
+            var deltaX = touchMoveX - touchStartX;
+            var deltaY = touchMoveY - touchStartY;
+
+            var playerLeft = parseInt(player.style.left) || 0;
+            var playerBottom = parseInt(player.style.bottom) || 0;
+            var stepSize = 10; // Adjust step size as needed
+
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                // Horizontal movement
+                if (deltaX > 0) {
+                    // Move right
+                    player.style.left = Math.min(playerLeft + stepSize, gameContainer.offsetWidth - player.offsetWidth) + 'px';
+                } else {
+                    // Move left
+                    player.style.left = Math.max(playerLeft - stepSize, 0) + 'px';
+                }
+            } else {
+                // Vertical movement
+                if (deltaY > 0) {
+                    // Move up
+                    player.style.bottom = Math.min(playerBottom + stepSize, gameContainer.offsetHeight - player.offsetHeight) + 'px';
+                } else {
+                    // Move down
+                    player.style.bottom = Math.max(playerBottom - stepSize, 0) + 'px';
+                }
+            }
+
+            touchStartX = touchMoveX;
+            touchStartY = touchMoveY;
+        });
+
+        // Start the game when the window loads
+        window.onload = function() {
+            resetGame(); // Initialize the game
+            startButton.addEventListener('click', startGame); // Add event listener to start button
+        };
+
+        // Add event listener to reset button
+        resetBtn.addEventListener('click', function() {
+            resetGame();
+        });
+    </script>
+</body>
+</html>

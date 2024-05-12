@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+body {
+    cursor: url('img/pilithecat.png'), auto;
+}
 :root {
 	--primary-color: #3b801b;
 	--background-color: #eeebf8;
@@ -1207,4 +1210,5 @@ html {
   #code:focus {
 	outline: none !important;
   }
-  
+
+
