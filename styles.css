@@ -177,7 +177,7 @@ html {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     padding: 1rem 0;
 }
 
@@ -269,8 +269,14 @@ html {
 
 /* Dispositivos móviles */
 @media only screen and (max-width: 480px) {
+    .container-navbar {
+        padding: 0; /* Elimina cualquier relleno en el contenedor del navbar */
+    }
 
-    
+    .navbar {
+        justify-content: flex-start; /* Alinea el navbar a la izquierda */
+    }
+
     .navbar .fa-bars {
         display: block; /* Muestra el icono de menú en dispositivos móviles */
         font-size: 2rem;
@@ -278,15 +284,14 @@ html {
         cursor: pointer;
         margin-right: 1rem;
     }
-    
+
     .search-form input {
-        width: 15rem; /* Ajusta el ancho del input de búsqueda en dispositivos móviles */
+        width: 10rem; /* Ajusta el ancho del input de búsqueda en dispositivos móviles */
     }
 
     .menu.show-menu {
         display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
-        justify-content: space-between; /* Distribuye los elementos uniformemente */
+        flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
@@ -297,18 +302,24 @@ html {
 
     .menu.show-menu li {
         margin-bottom: 1rem;
-        width: calc(5% - 0.10rem); /* Divide el espacio en dos columnas y ajusta el margen */
+        width: 100%;
     }
 
     .menu.show-menu a {
         color: #fff;
-        text-align: center; /* Centra el texto */
+        text-align: left;
     }
 
     .menu a {
-        font-size: 0.5rem; /* Reduce el tamaño de la fuente en dispositivos móviles */
+        font-size: 0.38rem;
     }
 }
+
+
+
+
+
+
 
 
 
