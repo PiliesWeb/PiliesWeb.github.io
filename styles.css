@@ -286,7 +286,7 @@ html {
     }
 
     .search-form input {
-        width: 10rem; /* Ajusta el ancho del input de búsqueda en dispositivos móviles */
+        width: 13rem; /* Ajusta el ancho del input de búsqueda en dispositivos móviles */
     }
 
     .menu.show-menu {
@@ -311,7 +311,7 @@ html {
     }
 
     .menu a {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 }
 
