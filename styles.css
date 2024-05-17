@@ -565,8 +565,8 @@ html {
 @media screen and (min-width: 320px) and (max-width: 480px) {
 	.card-category {
 		grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
-		height: 12rem; /* Reducir altura en dispositivos móviles */
-		width: 115%; /* Ajustar ancho en dispositivos móviles */
+		height: 10rem; /* Reducir altura en dispositivos móviles */
+		width: 100%; /* Ajustar ancho en dispositivos móviles */
 		gap: 1rem; /* Reducir gap en dispositivos móviles */
 	}
 	
