@@ -653,8 +653,8 @@ html {
 /* Products */
 .container-products {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); /* Ajuste del tamaño mínimo y máximo de las tarjetas para dispositivos móviles */
-	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); /* Ajuste del tamaño mínimo y máximo de las tarjetas para dispositivos móviles */
+	gap: 0.2rem;
 }
 
 .card-product {
@@ -672,6 +672,16 @@ html {
 .container-img img {
 	width: 100%;
 }
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container-img img {
+        width: 100%; /* Ajustar el ancho de la imagen al 150% en dispositivos móviles */
+    }
+}
+
 
 .container-img .discount {
 	position: absolute;
@@ -742,13 +752,26 @@ html {
 .content-card-product h3 {
 	grid-row: 2/3;
 	grid-column: 1/-1;
-
 	font-weight: 400;
 	font-size: 1rem; /* Ajuste del tamaño del título para dispositivos móviles */
-	margin-bottom: 0.5rem; /* Ajuste del margen inferior para dispositivos móviles */
+	margin-bottom: -8rem; /* Ajuste del margen inferior para dispositivos móviles */
 	cursor: pointer;
 }
 
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.content-card-product h3 {
+		grid-row: 2/3;
+		grid-column: 1/-1;
+	
+		font-weight: 400;
+		font-size: 0.8rem; /* Ajuste del tamaño del título para dispositivos móviles */
+		margin-bottom: -8rem; /* Ajuste del margen inferior para dispositivos móviles */
+		cursor: pointer;
+	}
+}
 .content-card-product h3:hover {
 	color: var(--primary-color);
 }
