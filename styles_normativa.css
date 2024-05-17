@@ -1,75 +1,103 @@
+/* Import de fuentes y variables :root */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-	--primary-color: #4e22b3;
-	--background-color: #eeebf8;
-	--dark-color: #000000;
+    --primary-color: #3b801b;
+    --background-color: #eeebf8;
+    --dark-color: #000000;
 }
 
+/* Establecer el tamaño de fuente base para dispositivos móviles */
 html {
-	font-size: 62.5%;
-	font-family: 'Poppins', sans-serif;
+    font-size: 62.5%; /* Esto es equivalente a 10px */
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Reset de estilos */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* ********************************** */
 /*             UTILIDADES             */
 /* ********************************** */
+
 .container {
-	max-width: 120rem;
-	margin: 0 auto;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 .heading-1 {
-	text-align: center;
-	font-weight: 500;
-	font-size: 3rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .heading-1 {
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente para dispositivos móviles */
+    }
+}
+
+/* iPads, Tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Aquí puedes agregar estilos específicos para iPads y tabletas si es necesario */
+}
+
+/* Pantallas pequeñas, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Aquí puedes agregar estilos específicos para pantallas pequeñas y laptops si es necesario */
+}
+
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Aquí puedes agregar estilos específicos para computadoras de escritorio y pantallas grandes si es necesario */
+}
+
+/* Pantallas extra-grandes, TV */
+@media only screen and (min-width: 1201px) {
+    /* Aquí puedes agregar estilos específicos para pantallas extra-grandes y TV si es necesario */
 }
 
 /* ********************************** */
 /*               HEADER               */
 /* ********************************** */
+
 .container-hero {
-	background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 
 .hero {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
 }
 
 /* Agrega estas reglas para el contenedor que engloba el logo y el título */
 .container-title-logo {
-	display: flex;
-	align-items: center;
-  }
-  
-  .container-logo {
-	display: flex;
-	align-items: center;
-	gap: 1.9rem !important; /* Ajusta este valor según tus preferencias para agregar más espacio entre el logo y el título */
-	margin-left: -1000px; /* Ajusta este valor para mover horizontalmente el contenedor */
-  }
-  
-  
-  .container-logo img {
-	max-width: 50px; /* Establece el ancho máximo según tus necesidades */
-	height: auto; /* Permite ajustar automáticamente la altura para mantener la proporción */
-  }
-  
-  .container-logo h1 {
-	margin-left: 10.9rem; /* Ajusta este valor según tus preferencias para agregar espacio entre el logo y el título */
-	text-decoration: none; /* Elimina la propiedad de text-decoration para desvincular el título */
-  }
-  
-  .container-logo h1 {
+    display: flex;
+    align-items: center;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.9rem !important; /* Ajusta este valor según tus preferencias para agregar más espacio entre el logo y el título */
+    margin-left: -1000px; /* Ajusta este valor para mover horizontalmente el contenedor */
+}
+
+.container-logo img {
+    max-width: 70px; /* Establece el ancho máximo según tus necesidades */
+    height: auto; /* Permite ajustar automáticamente la altura para mantener la proporción */
+}
+
+.container-logo h1 {
     margin-left: 1.9rem; /* Ajusta este valor según tus preferencias para agregar espacio entre el logo y el título */
     color: #000;
     font-size: 3rem; /* Ajusta el tamaño del título según tus preferencias */
@@ -77,127 +105,237 @@ html {
     letter-spacing: -1px;
 }
 
-  
-  
-
 .container-user {
-	display: flex;
-	gap: 1rem;
-	cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
 }
 
 .container-user .fa-user {
-	font-size: 3rem;
-	color: var(--primary-color);
-	padding-right: 2.5rem;
-	border-right: 1px solid #e2e2e2;
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
 }
 
 .container-user .fa-basket-shopping {
-	font-size: 3rem;
-	color: var(--primary-color);
-	padding-left: 1rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
 }
 
 .content-shopping-cart {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container-logo {
+        margin-left: 1rem; /* Ajusta el margen izquierdo para mover el logo a la derecha */
+    }
+
+    .container-logo img {
+        max-width: 50px; /* Ajusta el ancho máximo del logo para dispositivos móviles */
+    }
+}
+
+/* Dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container-logo h1 {
+        font-size: 1.5rem; /* Ajusta el tamaño del título para dispositivos móviles */
+    }
+}
+
+
+/* iPads, Tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Puedes agregar estilos específicos para iPads y tabletas si es necesario */
+}
+
+/* Pantallas pequeñas, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Puedes agregar estilos específicos para pantallas pequeñas y laptops si es necesario */
+}
+
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Puedes agregar estilos específicos para computadoras de escritorio y pantallas grandes si es necesario */
+}
+
+/* Pantallas extra-grandes, TV */
+@media only screen and (min-width: 1201px) {
+    /* Puedes agregar estilos específicos para pantallas extra-grandes y TV si es necesario */
 }
 
 /* ************* NAVBAR ************* */
+
 .container-navbar {
-	background-color: var(--primary-color);
+    background-color: var(--primary-color);
 }
 
 .navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 1rem 0;
 }
 
 .navbar .fa-bars {
-	display: none;
+    display: none;
 }
 
 .menu {
-	display: flex;
-	gap: 2rem;
+    display: flex;
+    gap: 2rem;
 }
 
 .menu li {
-	list-style: none;
+    list-style: none;
 }
 
 .menu a {
-	text-decoration: none;
-	font-size: 1.3rem;
-	color: var(--dark-color);
-	font-weight: 600;
-	text-transform: uppercase;
-	position: relative;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .menu a::after {
-	content: '';
-	width: 1.5rem;
-	height: 1px;
-	background-color: #fff;
-	position: absolute;
-	bottom: -3px;
-	left: 50%;
-	transform: translate(-50%, 50%);
-	opacity: 0;
-	transition: all 0.3s ease;
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover::after {
-	opacity: 1;
+    opacity: 1;
 }
 
 .menu a:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .search-form {
-	position: relative;
-	display: flex;
-	align-items: center;
-	border: 2px solid #fff;
-	border-radius: 2rem;
-	background-color: #fff;
-	height: 4.4rem;
-	overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
 }
 
 .search-form input {
-	outline: none;
-	font-family: inherit;
-	border: none;
-	width: 25rem;
-	font-size: 1.4rem;
-	padding: 0 2rem;
-	color: #777;
-	cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
 }
 
 .search-form input::-webkit-search-cancel-button {
-	appearance: none;
+    appearance: none;
 }
 
 .search-form .btn-search {
-	border: none;
-	background-color: var(--primary-color);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	padding: 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
 }
 
 .btn-search i {
-	font-size: 2rem;
-	color: #fff;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container-navbar {
+        padding: 0; /* Elimina cualquier relleno en el contenedor del navbar */
+    }
+
+    .navbar {
+        justify-content: flex-start; /* Alinea el navbar a la izquierda */
+    }
+
+    .navbar .fa-bars {
+        display: block; /* Muestra el icono de menú en dispositivos móviles */
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .search-form input {
+        width: 14rem; /* Ajusta el ancho del input de búsqueda en dispositivos móviles */
+    }
+
+    .menu.show-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 1rem;
+    }
+
+    .menu.show-menu li {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .menu.show-menu a {
+        color: #fff;
+        text-align: left;
+    }
+
+    .menu a {
+        font-size: 0.5rem;
+    }
+}
+
+
+/* iPads, Tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Puedes agregar estilos específicos para iPads y tabletas si es necesario */
+}
+
+/* Pantallas pequeñas, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Puedes agregar estilos específicos para pantallas pequeñas y laptops si es necesario */
+}
+
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Puedes agregar estilos específicos para computadoras de escritorio y pantallas grandes si es necesario */
+}
+
+/* Pantallas extra-grandes, TV */
+@media only screen and (min-width: 1201px) {
+    /* Puedes agregar estilos específicos para pantallas extra-grandes y TV si es necesario */
 }
 
 /* ********************************** */
@@ -302,7 +440,6 @@ html {
 /* ********************************** */
 /*             CATEGORIES             */
 /* ********************************** */
-
 .top-categories {
 	display: flex;
 	flex-direction: column;
@@ -312,7 +449,7 @@ html {
 
 .container-categories {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	gap: 3rem;
 }
 
@@ -350,6 +487,14 @@ html {
 	background-repeat: no-repeat;
 }
 
+.category-frappe {
+	background-image: linear-gradient(#00000080, #00000080),
+		url('img/operacion.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .card-category p {
 	font-size: 2.5rem;
 	color: #fff;
@@ -378,14 +523,45 @@ html {
 	color: var(--primary-color);
 }
 
+@media only screen and (max-width: 480px) {
+	.container-categories {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	.container-categories {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	.container-categories {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+	.container-categories {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (min-width: 1201px) {
+	.container-categories {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+
 /* ********************************** */
 /*            TOP PRODUCTS            */
 /* ********************************** */
 .top-products {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
-	margin-bottom: 3rem;
+	gap: 1rem;
+	margin-bottom: 2rem;
 }
 
 .container-options {
@@ -398,8 +574,8 @@ html {
 .container-options span {
 	color: #777;
 	background-color: #fff;
-	padding: 0.7rem 3rem;
-	font-size: 1.4rem;
+	padding: 0.7rem 2rem; /* Ajuste del padding para dispositivos móviles */
+	font-size: 1rem; /* Ajuste del tamaño del texto para dispositivos móviles */
 	text-transform: capitalize;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -418,13 +594,13 @@ html {
 /* Products */
 .container-products {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-	gap: 3rem;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); /* Ajuste del tamaño mínimo y máximo de las tarjetas para dispositivos móviles */
+	gap: 0.2rem;
 }
 
 .card-product {
 	background-color: #fff;
-	padding: 2rem 3rem;
+	padding: 1.5rem 2rem; /* Ajuste del padding para dispositivos móviles */
 	border-radius: 0.5rem;
 	cursor: pointer;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
@@ -438,14 +614,24 @@ html {
 	width: 100%;
 }
 
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container-img img {
+        width: 100%; /* Ajustar el ancho de la imagen al 150% en dispositivos móviles */
+    }
+}
+
+
 .container-img .discount {
 	position: absolute;
 	left: 0;
 	background-color: var(--primary-color);
 	color: #fff;
-	padding: 2px 1.2rem;
+	padding: 1px 0.8rem; /* Ajuste del padding para dispositivos móviles */
 	border-radius: 1rem;
-	font-size: 1.2rem;
+	font-size: 1rem; /* Ajuste del tamaño del texto para dispositivos móviles */
 }
 
 .card-product:hover .discount {
@@ -455,18 +641,18 @@ html {
 .button-group {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 0.5rem; /* Ajuste del espacio entre los botones para dispositivos móviles */
 
 	position: absolute;
 	top: 0;
-	right: -3rem;
+	right: -1rem; /* Ajuste del espacio desde el borde derecho para dispositivos móviles */
 	z-index: -1;
 	transition: all 0.4s ease;
 }
 
 .button-group span {
 	border: 1px solid var(--primary-color);
-	padding: 0.8rem;
+	padding: 0.6rem; /* Ajuste del padding para dispositivos móviles */
 
 	display: flex;
 	align-items: center;
@@ -476,28 +662,20 @@ html {
 	transition: all 0.4s ease;
 }
 
-.button-group span:hover {
-	background-color: var(--primary-color);
-}
-
 .button-group span i {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	color: var(--primary-color);
-}
-
-.button-group span:hover i {
-	color: #fff;
 }
 
 .card-product:hover .button-group {
 	z-index: 0;
-	right: -1rem;
+	right: 0;
 }
 
 .content-card-product {
 	display: grid;
 	justify-items: center;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr; /* Por defecto, una columna para dispositivos móviles */
 	grid-template-rows: repeat(4, min-content);
 	row-gap: 1rem;
 }
@@ -508,20 +686,33 @@ html {
 }
 
 .stars i {
-	font-size: 1.3rem;
+	font-size: 1.1rem; /* Ajuste del tamaño de las estrellas para dispositivos móviles */
 	color: var(--primary-color);
 }
 
 .content-card-product h3 {
 	grid-row: 2/3;
 	grid-column: 1/-1;
-
 	font-weight: 400;
-	font-size: 1.6rem;
-	margin-bottom: 1rem;
+	font-size: 1rem; /* Ajuste del tamaño del título para dispositivos móviles */
+	margin-bottom: -8rem; /* Ajuste del margen inferior para dispositivos móviles */
 	cursor: pointer;
 }
 
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.content-card-product h3 {
+		grid-row: 2/3;
+		grid-column: 1/-1;
+	
+		font-weight: 400;
+		font-size: 0.3rem; /* Ajuste del tamaño del título para dispositivos móviles */
+		margin-bottom: -8rem; /* Ajuste del margen inferior para dispositivos móviles */
+		cursor: pointer;
+	}
+}
 .content-card-product h3:hover {
 	color: var(--primary-color);
 }
@@ -529,7 +720,7 @@ html {
 .add-cart {
 	justify-self: start;
 	border: 2px solid var(--primary-color);
-	padding: 1rem;
+	padding: 0.8rem; /* Ajuste del padding para dispositivos móviles */
 	border-radius: 50%;
 	cursor: pointer;
 	transition: all 0.4s ease;
@@ -539,12 +730,8 @@ html {
 	justify-content: center;
 }
 
-.add-cart:hover {
-	background-color: var(--primary-color);
-}
-
 .add-cart i {
-	font-size: 1.5rem;
+	font-size: 1.3rem; /* Ajuste del tamaño del ícono para dispositivos móviles */
 	color: var(--primary-color);
 }
 
@@ -556,16 +743,16 @@ html {
 	justify-self: end;
 	align-self: center;
 
-	font-size: 1.7rem;
+	font-size: 1rem; /* Ajuste del tamaño del precio para dispositivos móviles */
 	font-weight: 600;
 }
 
 .content-card-product .price span {
-	font-size: 1.5rem;
+	font-size: 1.1rem; /* Ajuste del tamaño del precio de descuento para dispositivos móviles */
 	font-weight: 400;
 	text-decoration: line-through;
 	color: #777;
-	margin-left: 0.5rem;
+	margin-left: 0.3rem; /* Ajuste del margen izquierdo para dispositivos móviles */
 }
 
 /* ********************************** */
@@ -710,6 +897,10 @@ html {
 /*               FOOTER               */
 /* ********************************** */
 
+/* ********************************** */
+/*               FOOTER               */
+/* ********************************** */
+
 .footer {
 	background-color: var(--primary-color);
 }
@@ -723,7 +914,7 @@ html {
 
 .menu-footer {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr) 30rem;
+	grid-template-columns: repeat(1, 1fr); /* Cambio a una columna para dispositivos móviles y tablets */
 	gap: 3rem;
 	justify-items: center;
 }
@@ -790,22 +981,6 @@ html {
 .social-icons span i {
 	color: #fff;
 	font-size: 1.2rem;
-}
-
-.facebook {
-	background-color: #3b5998;
-}
-
-.twitter {
-	background-color: #00acee;
-}
-
-.youtube {
-	background-color: #c4302b;
-}
-
-.pinterest {
-	background-color: #c8232c;
 }
 
 .instagram {
@@ -876,208 +1051,53 @@ html {
 	font-size: 1.6rem;
 }
 
-/* ********************************** */
-/*       MEDIA QUERIES -- 768px       */
-/* ********************************** */
-@media (max-width: 768px) {
-	html {
-		font-size: 55%;
+/*Esto es de los botónes*/
+
+/* Media queries para dispositivos móviles y tablets */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .footer {
+    padding: 2rem;
+  }
+
+  .menu-footer {
+    gap: 2rem;
+  }
+
+  .social-icons span {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+/* Media queries para dispositivos de tamaño medio, laptops y pantallas grandes */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+	.footer {
+	  padding: 2.5rem;
 	}
-
-	.hero {
-		padding: 2rem;
-	}
-
-	.customer-support {
-		display: none;
-	}
-
-	.content-shopping-cart {
-		display: none;
-	}
-
-	.navbar {
-		padding: 1rem 2rem;
-	}
-
-	.navbar .fa-bars {
-		display: block;
-		color: #fff;
-		font-size: 3rem;
-	}
-
-	.menu {
-		display: none;
-	}
-
-	.content-banner {
-		max-width: 50rem;
-		margin: 0 auto;
-		padding: 25rem 0;
-	}
-
-	.container-features {
-		grid-template-columns: repeat(2, 1fr);
-		padding: 3rem 2rem;
-	}
-
-	.card-feature {
-		padding: 2rem;
-	}
-
-	.heading-1 {
-		font-size: 2.4rem;
-	}
-
-	.card-category {
-		height: 12rem;
-	}
-
-	.card-category p {
-		font-size: 2rem;
-		text-align: center;
-		line-height: 1;
-	}
-
-	.card-category span {
-		font-size: 1.4rem;
-	}
-
-	.container-options {
-		align-items: center;
-	}
-
-	.container-options span {
-		text-align: center;
-		padding: 1rem 2rem;
-	}
-
-	.container-products {
-		grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-	}
-
-	.gallery {
-		grid-template-rows: repeat(2, 15rem);
-	}
-
-	.container-blogs {
-		overflow: hidden;
-		grid-template-columns: 1fr 1fr;
-
-		height: 52rem;
-	}
-
+  
 	.menu-footer {
-		grid-template-columns: repeat(2, 1fr);
+	  grid-template-columns: repeat(2, 1fr);
+	  gap: 3rem;
 	}
-
-	.copyright {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 1.5rem;
+  
+	.social-icons span {
+	  width: 3rem;
+	  height: 3rem;
 	}
-}
-
-/* ********************************** */
-/*       MEDIA QUERIES -- 468px       */
-/* ********************************** */
-@media (max-width: 468px) {
-	html {
-		font-size: 42.5%;
+  }
+  
+  /* Media queries para pantallas extra grandes */
+  @media screen and (min-width: 1201px) {
+	.footer {
+	  padding: 3rem;
 	}
-
-	.content-banner {
-		max-width: 50rem;
-		padding: 22rem 0;
+  
+	.menu-footer {
+	  grid-template-columns: repeat(4, 1fr);
+	  gap: 4rem;
 	}
-
-	.heading-1 {
-		font-size: 2.8rem;
+  
+	.social-icons span {
+	  width: 3.5rem;
+	  height: 3.5rem;
 	}
-
-	.card-feature {
-		flex-direction: column;
-		border-radius: 2rem;
-	}
-
-	.feature-content {
-		align-items: center;
-	}
-
-	.feature-content p {
-		font-size: 1.4rem;
-		text-align: center;
-	}
-
-	.feature-content span {
-		font-size: 1.6rem;
-		text-align: center;
-	}
-
-	.container-options span {
-		font-size: 1.8rem;
-		padding: 1rem 1.5rem;
-		font-weight: 500;
-	}
-
-	.container-products {
-		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-		gap: 1rem;
-	}
-
-	.container-img .discount {
-		font-size: 2rem;
-	}
-
-	.content-card-product h3 {
-		font-size: 2.2rem;
-	}
-
-	.gallery {
-		grid-template-rows: repeat(2, 20rem);
-	}
-
-	.blogs {
-		padding: 2rem;
-	}
-
-	.container-blogs {
-		grid-template-columns: 1fr;
-		height: 75rem;
-	}
-
-	.content-blog h3 {
-		font-size: 2.4rem;
-	}
-
-	.content-blog span {
-		font-size: 1.8rem;
-	}
-
-	.content-blog p {
-		font-size: 2.2rem;
-	}
-
-	.btn-read-more{
-		font-size: 1.8rem;
-	}
-
-	.contact-info ul,
-	.information ul,
-	.my-account ul{
-		display: none;
-	}
-
-	.contact-info {
-		align-items: center;
-	}
-
-	.menu-footer{
-		grid-template-columns: 1fr;
-	}
-
-	.content p{
-		font-size: 1.6rem;
-	}
-}
+  }

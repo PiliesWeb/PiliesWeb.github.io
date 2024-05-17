@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     const novenoSemestre = [
-        { title: "Prácticas Profesionales", hours: 200, credits: 10, prerequisite: "Ninguno"},
+        { title: "Prácticas Profesionales", hours: 30, credits: 10, prerequisite: "Ninguno"},
     ];   
     
     const colores = {
