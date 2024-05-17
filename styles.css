@@ -39,7 +39,9 @@ html {
 
 /* Dispositivos móviles */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-    /* Aquí puedes agregar estilos específicos para dispositivos móviles si es necesario */
+    .heading-1 {
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente para dispositivos móviles */
+    }
 }
 
 /* iPads, Tabletas */
@@ -316,16 +318,6 @@ html {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* iPads, Tabletas */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     /* Puedes agregar estilos específicos para iPads y tabletas si es necesario */
@@ -510,7 +502,6 @@ html {
 /* ********************************** */
 /*             CATEGORIES             */
 /* ********************************** */
-
 .top-categories {
 	display: flex;
 	flex-direction: column;
@@ -520,7 +511,7 @@ html {
 
 .container-categories {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr); /* Por defecto, dos columnas */
+	grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
 	gap: 2rem; /* Ajuste del espacio entre las tarjetas de categorías */
 }
 
@@ -551,7 +542,7 @@ html {
 
 .card-category p::after {
 	content: '';
-	width: 2rem; /* Ajuste del tamaño de la línea para dispositivos móviles */
+	width: 0rem; /* Ajuste del tamaño de la línea para dispositivos móviles */
 	height: 2px; /* Ajuste del grosor de la línea para dispositivos móviles */
 	background-color: #fff;
 	position: absolute;
@@ -569,6 +560,29 @@ html {
 .card-category span:hover {
 	color: var(--primary-color);
 }
+
+/* Media queries para dispositivos móviles */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	.card-category {
+		grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
+		height: 12rem; /* Reducir altura en dispositivos móviles */
+		width: 115%; /* Ajustar ancho en dispositivos móviles */
+		gap: 1rem; /* Reducir gap en dispositivos móviles */
+	}
+	
+	.card-category p {
+		font-size: 1.5rem; /* Reducir tamaño del texto principal en dispositivos móviles */
+	}
+	
+	.card-category p::after {
+		width: 0rem; /* Ajuste del tamaño de la línea para dispositivos móviles */
+	}
+	
+	.card-category span {
+		font-size: 1rem; /* Reducir tamaño del texto secundario en dispositivos móviles */
+	}
+}
+
 
 /* Media queries para iPads y tabletas */
 @media screen and (min-width: 481px) and (max-width: 768px) {
