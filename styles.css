@@ -1027,12 +1027,13 @@ html {
 /* Para dispositivos móviles */
 @media screen and (max-width: 480px) {
 	.container-blogs {
-		grid-template-columns: repeat(1, 1fr);
-	}
-	.card-blog {
-		margin: 0 auto;
+		grid-template-columns: repeat(2, 1fr);
+		margin-left: 90px; /* Ajusta el margen izquierdo para mover los elementos a la derecha */
 	}
 }
+
+
+
 
 /* Para iPads y tabletas */
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -1402,9 +1403,10 @@ html {
 /* Media queries para hacer responsive */
 @media screen and (max-width: 480px) {
 	.card {
-		display: none; /* Ocultar la carta en dispositivos móviles */
+		transform: translateY(-1000px); /* Mueve la sección verticalmente fuera de la pantalla */
 	}
 }
+
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 	.card {
