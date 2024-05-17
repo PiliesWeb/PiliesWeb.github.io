@@ -634,7 +634,7 @@ html {
 	color: #777;
 	background-color: #fff;
 	padding: 0.7rem 2rem; /* Ajuste del padding para dispositivos móviles */
-	font-size: 1.2rem; /* Ajuste del tamaño del texto para dispositivos móviles */
+	font-size: 1rem; /* Ajuste del tamaño del texto para dispositivos móviles */
 	text-transform: capitalize;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -653,7 +653,7 @@ html {
 /* Products */
 .container-products {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* Ajuste del tamaño mínimo y máximo de las tarjetas para dispositivos móviles */
+	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); /* Ajuste del tamaño mínimo y máximo de las tarjetas para dispositivos móviles */
 	gap: 1rem;
 }
 
@@ -744,7 +744,7 @@ html {
 	grid-column: 1/-1;
 
 	font-weight: 400;
-	font-size: 1.4rem; /* Ajuste del tamaño del título para dispositivos móviles */
+	font-size: 1rem; /* Ajuste del tamaño del título para dispositivos móviles */
 	margin-bottom: 0.5rem; /* Ajuste del margen inferior para dispositivos móviles */
 	cursor: pointer;
 }
