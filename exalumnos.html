@@ -138,6 +138,22 @@ cargando
 			</div>
 		</footer>
 
-		<script src="inicio.js"></script>	
+		<script>
+			// Función para redireccionar en dispositivos móviles
+function redirectOnMobile() {
+    // Verifica el tamaño de la pantalla
+    var screenWidth = window.innerWidth;
+
+    // Verifica si es un dispositivo móvil y modifica el enlace en consecuencia
+    if (screenWidth <= 480) {
+        // Dispositivos móviles
+        document.getElementById("conoce-link").href = "conoce2.html";
+    }
+}
+
+// Llama a la función cuando la página esté completamente cargada
+window.onload = redirectOnMobile;
+
+		</script>
 	</body>
 </html>
