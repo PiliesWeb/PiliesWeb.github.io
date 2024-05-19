@@ -1512,3 +1512,71 @@ html {
 	transition-property: width, left;
   }
   
+
+  /* slider*/
+/* Estilos generales para el cuerpo */
+/* Contenedor padre */
+.parent-container {
+    display: flex;
+    justify-content: center; /* Centra el slider horizontalmente */
+    align-items: center; /* Centra el slider verticalmente */
+    height: 50vh; /* Ajusta la altura del contenedor padre según sea necesario */
+    margin-bottom: 20px; /* Espacio entre los sliders */
+}
+
+/* Estilo para el contenedor del slider */
+.slider-container {
+    width: 80vw; /* Ancho del contenedor relativo al tamaño de la ventana del navegador */
+    height: 60vw; /* Altura del contenedor relativa al tamaño de la ventana del navegador */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    max-height: 600px; /* Altura máxima del contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que exceda las dimensiones del contenedor */
+    position: relative; /* Establece la posición relativa para que los elementos internos puedan posicionarse correctamente */
+}
+
+/* Estilo para las imágenes dentro del slider */
+.slider-container img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor sin distorsionarla */
+}
+
+
+/* Contenedor de las imágenes dentro del slider */
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+/* Estilos para cada imagen */
+.slide {
+    min-width: 100%;
+    height: auto;
+    border-right: 2px solid #ccc; /* Opcional: Añade un borde entre las imágenes */
+}
+
+/* Contenedor de texto */
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Ajusta la altura del contenedor de texto según sea necesario */
+    margin-bottom: 20px; /* Espacio entre el texto y el siguiente slider */
+}
+
+.text-container p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Consulta de medios para dispositivos móviles */
+@media screen and (max-width: 480px) {
+    .parent-container {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+    .text-container {
+        height: 15vh; /* Ajusta la altura del contenedor de texto para dispositivos móviles */
+    }
+}
