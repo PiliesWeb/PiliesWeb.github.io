@@ -1,0 +1,1443 @@
+/* Import de fuentes y variables :root */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3b801b;
+    --background-color: #eeebf8;
+    --dark-color: #000000;
+}
+
+/* Establecer el tamaño de fuente base para dispositivos móviles */
+html {
+    font-size: 62.5%; /* Esto es equivalente a 10px */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ********************************** */
+/*             UTILIDADES             */
+/* ********************************** */
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .heading-1 {
+        font-size: 1.5rem; /* Reducir el tamaño de la fuente para dispositivos móviles */
+    }
+}
+
+/* iPads, Tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Aquí puedes agregar estilos específicos para iPads y tabletas si es necesario */
+}
+
+/* Pantallas pequeñas, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Aquí puedes agregar estilos específicos para pantallas pequeñas y laptops si es necesario */
+}
+
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Aquí puedes agregar estilos específicos para computadoras de escritorio y pantallas grandes si es necesario */
+}
+
+/* Pantallas extra-grandes, TV */
+@media only screen and (min-width: 1201px) {
+    /* Aquí puedes agregar estilos específicos para pantallas extra-grandes y TV si es necesario */
+}
+
+/* ********************************** */
+/*               HEADER               */
+/* ********************************** */
+
+.container-hero {
+    background-color: var(--background-color);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+/* Agrega estas reglas para el contenedor que engloba el logo y el título */
+.container-title-logo {
+    display: flex;
+    align-items: center;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.9rem !important; /* Ajusta este valor según tus preferencias para agregar más espacio entre el logo y el título */
+    margin-left: -1000px; /* Ajusta este valor para mover horizontalmente el contenedor */
+}
+
+.container-logo img {
+    max-width: 70px; /* Establece el ancho máximo según tus necesidades */
+    height: auto; /* Permite ajustar automáticamente la altura para mantener la proporción */
+}
+
+.container-logo h1 {
+    margin-left: 1.9rem; /* Ajusta este valor según tus preferencias para agregar espacio entre el logo y el título */
+    color: #000;
+    font-size: 3rem; /* Ajusta el tamaño del título según tus preferencias */
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.container-user {
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.container-user .fa-user {
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-right: 2.5rem;
+    border-right: 1px solid #e2e2e2;
+}
+
+.container-user .fa-basket-shopping {
+    font-size: 3rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+.content-shopping-cart {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container-logo {
+        margin-left: 1rem; /* Ajusta el margen izquierdo para mover el logo a la derecha */
+    }
+
+    .container-logo img {
+        max-width: 50px; /* Ajusta el ancho máximo del logo para dispositivos móviles */
+    }
+}
+
+/* Dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container-logo h1 {
+        font-size: 1.5rem; /* Ajusta el tamaño del título para dispositivos móviles */
+    }
+}
+
+
+/* iPads, Tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Puedes agregar estilos específicos para iPads y tabletas si es necesario */
+}
+
+/* Pantallas pequeñas, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Puedes agregar estilos específicos para pantallas pequeñas y laptops si es necesario */
+}
+
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Puedes agregar estilos específicos para computadoras de escritorio y pantallas grandes si es necesario */
+}
+
+/* Pantallas extra-grandes, TV */
+@media only screen and (min-width: 1201px) {
+    /* Puedes agregar estilos específicos para pantallas extra-grandes y TV si es necesario */
+}
+
+/* ************* NAVBAR ************* */
+
+.container-navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 1rem 0;
+}
+
+.navbar .fa-bars {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+    opacity: 1;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    background-color: #fff;
+    height: 4.4rem;
+    overflow: hidden;
+}
+
+.search-form input {
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 25rem;
+    font-size: 1.4rem;
+    padding: 0 2rem;
+    color: #777;
+    cursor: pointer;
+}
+
+.search-form input::-webkit-search-cancel-button {
+    appearance: none;
+}
+
+.search-form .btn-search {
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.btn-search i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .container-navbar {
+        padding: 0; /* Elimina cualquier relleno en el contenedor del navbar */
+    }
+
+    .navbar {
+        justify-content: flex-start; /* Alinea el navbar a la izquierda */
+    }
+
+    .navbar .fa-bars {
+        display: block; /* Muestra el icono de menú en dispositivos móviles */
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .search-form input {
+        width: 14rem; /* Ajusta el ancho del input de búsqueda en dispositivos móviles */
+    }
+
+    .menu.show-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        padding: 1rem;
+    }
+
+    .menu.show-menu li {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .menu.show-menu a {
+        color: #fff;
+        text-align: left;
+    }
+
+    .menu a {
+        font-size: 0.5rem;
+    }
+}
+
+
+/* iPads, Tabletas */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    /* Puedes agregar estilos específicos para iPads y tabletas si es necesario */
+}
+
+/* Pantallas pequeñas, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Puedes agregar estilos específicos para pantallas pequeñas y laptops si es necesario */
+}
+
+/* Computadoras de escritorio, pantallas grandes */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    /* Puedes agregar estilos específicos para computadoras de escritorio y pantallas grandes si es necesario */
+}
+
+/* Pantallas extra-grandes, TV */
+@media only screen and (min-width: 1201px) {
+    /* Puedes agregar estilos específicos para pantallas extra-grandes y TV si es necesario */
+}
+
+
+
+
+
+/* ********************************** */
+/*               BANNER               */
+/* ********************************** */
+.banner {
+	background-image: linear-gradient(100deg, #000000, #00000020),
+		url('img/portada.jpg'); /* Cambia 'portada.jpg' por el nombre de tu nueva imagen */
+	height: 40rem; /* Altura ajustada del banner */
+	background-size: cover; /* Recortar la imagen para que cubra completamente el banner */
+	background-position: center;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 480px) {
+	.banner {
+		height: 30rem; /* Altura aún más ajustada para dispositivos móviles */
+	}
+	
+	.content-banner {
+		padding: 10rem 0; /* Ajuste del espacio interno del banner para dispositivos móviles */
+	}
+	
+	.content-banner p {
+		font-size: 0.8rem; /* Tamaño del texto reducido para dispositivos móviles */
+		margin-bottom: 0.5rem; /* Espacio inferior reducido para dispositivos móviles */
+	}
+	
+	.content-banner h2 {
+		font-size: 2rem; /* Tamaño del título reducido para dispositivos móviles */
+	}
+}
+
+/* Para tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.banner {
+		height: 30rem; /* Altura ajustada para tablets */
+	}
+	
+	.content-banner {
+		padding: 20rem 0; /* Ajuste del espacio interno del banner para tablets */
+	}
+	
+	.content-banner h2 {
+		font-size: 3rem; /* Tamaño del título ajustado para tablets */
+	}
+}
+
+/* Para pantallas pequeñas y laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.banner {
+		height: 40rem; /* Altura ajustada para pantallas pequeñas y laptops */
+	}
+}
+
+/* Para computadoras de escritorio y pantallas grandes */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.banner {
+		height: 70rem; /* Altura ajustada para computadoras de escritorio y pantallas grandes */
+	}
+}
+
+/* Para pantallas extra grandes y televisores */
+@media screen and (min-width: 1201px) {
+	.banner {
+		height: 50rem; /* Altura ajustada para pantallas extra grandes y televisores */
+	}
+}
+
+
+
+/* ********************************** */
+/*            MAIN CONTENT            */
+/* ********************************** */
+.main-content {
+	background-color: var(--background-color);
+	padding: 3rem 1rem; /* Ajuste del padding para dispositivos móviles */
+}
+
+/* ********************************** */
+/*              FEATURES              */
+/* ********************************** */
+.container-features {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr)); /* Por defecto, mostrar dos columnas */
+	gap: 2rem; /* Ajuste del espacio entre las tarjetas de características */
+	padding: 2rem 0; /* Ajuste del padding para dispositivos móviles */
+}
+
+.card-feature {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem; /* Ajuste del espacio entre los iconos y el contenido de las tarjetas de características */
+
+	background-color: #fff;
+	border-radius: 1rem;
+	padding: 1rem; /* Ajuste del padding de las tarjetas de características */
+}
+
+.card-feature i {
+	font-size: 2rem; /* Ajuste del tamaño del ícono */
+	color: var(--primary-color);
+}
+
+.feature-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.feature-content span {
+	font-weight: 700;
+	font-size: 1rem; /* Ajuste del tamaño del título de la característica */
+	color: var(--dark-color);
+}
+
+.feature-content p {
+	color: #777;
+	font-weight: 500;
+	font-size: 0.9rem; /* Ajuste del tamaño del texto de la característica */
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	.container-features {
+		grid-template-columns: 1fr; /* Solo una columna en dispositivos móviles */
+	}
+}
+
+/* Media queries para iPads y tabletas */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.container-features {
+		grid-template-columns: repeat(2, minmax(0, 1fr)); /* Dos columnas en iPads y tabletas */
+	}
+}
+
+/* Media queries para pantallas pequeñas y laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.container-features {
+		grid-template-columns: repeat(3, minmax(0, 1fr)); /* Tres columnas en pantallas pequeñas y laptops */
+	}
+}
+
+/* Media queries para computadoras de escritorio y pantallas grandes */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.container-features {
+		grid-template-columns: repeat(4, minmax(0, 1fr)); /* Cuatro columnas en computadoras de escritorio y pantallas grandes */
+	}
+}
+
+/* Media queries para pantallas extra-grandes y televisores */
+@media screen and (min-width: 1201px) {
+	.container-features {
+		grid-template-columns: repeat(4, minmax(0, 1fr)); /* Mantener cuatro columnas en pantallas extra-grandes y televisores */
+	}
+}
+
+
+/* ********************************** */
+/*             CATEGORIES             */
+/* ********************************** */
+.top-categories {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+.container-categories {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
+	gap: 2rem; /* Ajuste del espacio entre las tarjetas de categorías */
+}
+
+.card-category {
+	height: 20rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 2rem;
+	gap: 2rem;
+}
+
+.category-moca,
+.category-capuchino,
+.category-expreso {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.card-category p {
+	font-size: 2rem; /* Ajuste del tamaño del texto para dispositivos móviles */
+	color: #fff;
+	text-transform: capitalize;
+	position: relative;
+}
+
+.card-category p::after {
+	content: '';
+	width: 0rem; /* Ajuste del tamaño de la línea para dispositivos móviles */
+	height: 2px; /* Ajuste del grosor de la línea para dispositivos móviles */
+	background-color: #fff;
+	position: absolute;
+	bottom: -1rem; /* Ajuste de la posición de la línea para dispositivos móviles */
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.card-category span {
+	font-size: 1.4rem; /* Ajuste del tamaño del texto secundario para dispositivos móviles */
+	color: #fff;
+	cursor: pointer;
+}
+
+.card-category span:hover {
+	color: var(--primary-color);
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	.card-category {
+		grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
+		height: 10rem; /* Reducir altura en dispositivos móviles */
+		width: 100%; /* Ajustar ancho en dispositivos móviles */
+		gap: 1rem; /* Reducir gap en dispositivos móviles */
+	}
+	
+	.card-category p {
+		font-size: 1.5rem; /* Reducir tamaño del texto principal en dispositivos móviles */
+	}
+	
+	.card-category p::after {
+		width: 0rem; /* Ajuste del tamaño de la línea para dispositivos móviles */
+	}
+	
+	.card-category span {
+		font-size: 1rem; /* Reducir tamaño del texto secundario en dispositivos móviles */
+	}
+}
+
+
+/* Media queries para iPads y tabletas */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.container-categories {
+		grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
+	}
+}
+
+/* Media queries para pantallas pequeñas y laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.container-categories {
+		grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas pequeñas y laptops */
+	}
+}
+
+/* Media queries para computadoras de escritorio y pantallas grandes */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.container-categories {
+		grid-template-columns: repeat(3, 1fr); /* Cuatro columnas en computadoras de escritorio y pantallas grandes */
+	}
+}
+
+/* Media queries para pantallas extra-grandes y televisores */
+@media screen and (min-width: 1201px) {
+	.container-categories {
+		grid-template-columns: repeat(3, 1fr); /* Mantener cuatro columnas en pantallas extra-grandes y televisores */
+	}
+}
+
+
+/* ********************************** */
+/*            TOP PRODUCTS            */
+/* ********************************** */
+.top-products {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.container-options {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin-bottom: 1rem;
+}
+
+.container-options span {
+	color: #777;
+	background-color: #fff;
+	padding: 0.7rem 2rem; /* Ajuste del padding para dispositivos móviles */
+	font-size: 1rem; /* Ajuste del tamaño del texto para dispositivos móviles */
+	text-transform: capitalize;
+	border-radius: 2rem;
+	cursor: pointer;
+}
+
+.container-options span:hover {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+.container-options span.active {
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+/* Products */
+.container-products {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); /* Ajuste del tamaño mínimo y máximo de las tarjetas para dispositivos móviles */
+	gap: 0.2rem;
+}
+
+.card-product {
+	background-color: #fff;
+	padding: 1.5rem 2rem; /* Ajuste del padding para dispositivos móviles */
+	border-radius: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.container-img {
+	position: relative;
+}
+
+.container-img img {
+	width: 100%;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container-img img {
+        width: 100%; /* Ajustar el ancho de la imagen al 150% en dispositivos móviles */
+    }
+}
+
+
+.container-img .discount {
+	position: absolute;
+	left: 0;
+	background-color: var(--primary-color);
+	color: #fff;
+	padding: 1px 0.8rem; /* Ajuste del padding para dispositivos móviles */
+	border-radius: 1rem;
+	font-size: 1rem; /* Ajuste del tamaño del texto para dispositivos móviles */
+}
+
+.card-product:hover .discount {
+	background-color: #000;
+}
+
+.button-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem; /* Ajuste del espacio entre los botones para dispositivos móviles */
+
+	position: absolute;
+	top: 0;
+	right: -1rem; /* Ajuste del espacio desde el borde derecho para dispositivos móviles */
+	z-index: -1;
+	transition: all 0.4s ease;
+}
+
+.button-group span {
+	border: 1px solid var(--primary-color);
+	padding: 0.6rem; /* Ajuste del padding para dispositivos móviles */
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+
+.button-group span i {
+	font-size: 1.3rem;
+	color: var(--primary-color);
+}
+
+.card-product:hover .button-group {
+	z-index: 0;
+	right: 0;
+}
+
+.content-card-product {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 1fr; /* Por defecto, una columna para dispositivos móviles */
+	grid-template-rows: repeat(4, min-content);
+	row-gap: 1rem;
+}
+
+.stars {
+	grid-row: 1/2;
+	grid-column: 1/-1;
+}
+
+.stars i {
+	font-size: 1.1rem; /* Ajuste del tamaño de las estrellas para dispositivos móviles */
+	color: var(--primary-color);
+}
+
+.content-card-product h3 {
+	grid-row: 2/3;
+	grid-column: 1/-1;
+	font-weight: 400;
+	font-size: 1rem; /* Ajuste del tamaño del título para dispositivos móviles */
+	margin-bottom: -8rem; /* Ajuste del margen inferior para dispositivos móviles */
+	cursor: pointer;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+
+/* Dispositivos móviles */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.content-card-product h3 {
+		grid-row: 2/3;
+		grid-column: 1/-1;
+	
+		font-weight: 400;
+		font-size: 0.8rem; /* Ajuste del tamaño del título para dispositivos móviles */
+		margin-bottom: -8rem; /* Ajuste del margen inferior para dispositivos móviles */
+		cursor: pointer;
+	}
+}
+.content-card-product h3:hover {
+	color: var(--primary-color);
+}
+
+.add-cart {
+	justify-self: start;
+	border: 2px solid var(--primary-color);
+	padding: 0.8rem; /* Ajuste del padding para dispositivos móviles */
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.4s ease;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.add-cart i {
+	font-size: 1.3rem; /* Ajuste del tamaño del ícono para dispositivos móviles */
+	color: var(--primary-color);
+}
+
+.add-cart:hover i {
+	color: #fff;
+}
+
+.content-card-product .price {
+	justify-self: end;
+	align-self: center;
+
+	font-size: 1.3rem; /* Ajuste del tamaño del precio para dispositivos móviles */
+	font-weight: 600;
+}
+
+.content-card-product .price span {
+	font-size: 1.1rem; /* Ajuste del tamaño del precio de descuento para dispositivos móviles */
+	font-weight: 400;
+	text-decoration: line-through;
+	color: #777;
+	margin-left: 0.3rem; /* Ajuste del margen izquierdo para dispositivos móviles */
+}
+
+
+/* ********************************** */
+/*               GALLERY              */
+/* ********************************** */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Por defecto, dos columnas */
+	grid-template-rows: repeat(4, 20rem); /* Por defecto, cuatro filas */
+	gap: 1rem; /* Ajuste del espacio entre las imágenes */
+	margin-bottom: 3rem;
+}
+
+.gallery img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gallery-img-3 {
+	grid-column: 1/3; /* Para dispositivos móviles, la imagen ocupa dos columnas */
+	grid-row: 1/3; /* Para dispositivos móviles, la imagen ocupa dos filas */
+}
+
+/* Media queries para iPads y tabletas */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.gallery {
+		grid-template-columns: repeat(3, 1fr); /* Tres columnas en iPads y tabletas */
+		grid-template-rows: repeat(2, 20rem); /* Dos filas en iPads y tabletas */
+	}
+}
+
+/* Media queries para pantallas pequeñas y laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.gallery {
+		grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas pequeñas y laptops */
+		grid-template-rows: repeat(2, 20rem); /* Dos filas en pantallas pequeñas y laptops */
+	}
+}
+
+/* Media queries para computadoras de escritorio y pantallas grandes */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.gallery {
+		grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en computadoras de escritorio y pantallas grandes */
+		grid-template-rows: repeat(2, 20rem); /* Dos filas en computadoras de escritorio y pantallas grandes */
+	}
+}
+
+/* Media queries para pantallas extra-grandes y televisores */
+@media screen and (min-width: 1201px) {
+	.gallery {
+		grid-template-columns: repeat(4, 1fr); /* Mantener cuatro columnas en pantallas extra-grandes y televisores */
+		grid-template-rows: repeat(2, 30rem); /* Mantener dos filas en pantallas extra-grandes y televisores */
+	}
+}
+
+/* ********************************** */
+/*              SPECIALS              */
+/* ********************************** */
+.specials {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+/* Media queries para iPads y tabletas */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.specials {
+		flex-direction: row; /* Cambiar la dirección a fila en iPads y tabletas */
+		flex-wrap: wrap; /* Permitir que los elementos se envuelvan en iPads y tabletas */
+		justify-content: space-between; /* Distribuir los elementos de manera uniforme en iPads y tabletas */
+	}
+}
+
+/* Media queries para pantallas pequeñas y laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.specials {
+		flex-direction: row; /* Cambiar la dirección a fila en pantallas pequeñas y laptops */
+		flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas y laptops */
+		justify-content: space-between; /* Distribuir los elementos de manera uniforme en pantallas pequeñas y laptops */
+	}
+}
+
+/* Media queries para computadoras de escritorio y pantallas grandes */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.specials {
+		flex-direction: row; /* Cambiar la dirección a fila en computadoras de escritorio y pantallas grandes */
+		flex-wrap: wrap; /* Permitir que los elementos se envuelvan en computadoras de escritorio y pantallas grandes */
+		justify-content: space-between; /* Distribuir los elementos de manera uniforme en computadoras de escritorio y pantallas grandes */
+	}
+}
+
+/* Media queries para pantallas extra-grandes y televisores */
+@media screen and (min-width: 1201px) {
+	.specials {
+		flex-direction: row; /* Mantener la dirección a fila en pantallas extra-grandes y televisores */
+		flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas extra-grandes y televisores */
+		justify-content: space-between; /* Distribuir los elementos de manera uniforme en pantallas extra-grandes y televisores */
+	}
+}
+
+
+/* ********************************** */
+/*                BLOGS               */
+/* ********************************** */
+.blogs {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.container-blogs {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+}
+
+.card-blog {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.card-blog .container-img {
+	border-radius: 2rem;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.button-group-blog {
+	position: absolute;
+	bottom: 1.5rem;
+	right: -2.5rem;
+
+	display: flex;
+	gap: 0.7rem;
+	z-index: -1;
+	transition: all 0.3s ease;
+}
+
+.card-blog:hover .button-group-blog {
+	z-index: 0;
+	right: 1.5rem;
+}
+
+.button-group-blog span {
+	background-color: #fff;
+	padding: 1rem;
+	border-radius: 50%;
+	transition: all 0.4s ease;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-group-blog span i {
+	font-size: 1.3rem;
+}
+
+.button-group-blog span:hover {
+	background-color: var(--primary-color);
+}
+
+.button-group-blog span:hover i {
+	color: #fff;
+}
+
+.content-blog h3 {
+	font-size: 1.8rem;
+	margin-bottom: 1.7rem;
+	color: var(--dark-color);
+	font-weight: 500;
+}
+
+.content-blog h3:hover {
+	color: var(--primary-color);
+	cursor: pointer;
+}
+
+.content-blog p {
+	margin-top: 1rem;
+	font-size: 1.4rem;
+	color: #777;
+}
+
+.content-blog span {
+	color: var(--primary-color);
+	font-size: 1.3rem;
+}
+
+.btn-read-more {
+	padding: 1rem 3rem;
+	background-color: var(--primary-color);
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	border-radius: 2rem;
+	margin: 3rem 0 5rem;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.btn-read-more:hover {
+	background-color: var(--dark-color);
+}
+
+/* Responsive Styles */
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 480px) {
+	.container-blogs {
+		grid-template-columns: repeat(2, 1fr);
+		margin-left: 90px; /* Ajusta el margen izquierdo para mover los elementos a la derecha */
+	}
+}
+
+
+
+
+/* Para iPads y tabletas */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.container-blogs {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Para pantallas pequeñas y laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.container-blogs {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Para computadoras de escritorio y pantallas grandes */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.container-blogs {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Para pantallas extra grandes y TVs */
+@media screen and (min-width: 1201px) {
+	.container-blogs {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+
+
+
+/* ********************************** */
+/*               FOOTER               */
+/* ********************************** */
+
+.footer {
+	background-color: var(--primary-color);
+}
+
+.container-footer {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	padding: 3rem;
+}
+
+.menu-footer {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr); /* Cambio a una columna para dispositivos móviles y tablets */
+	gap: 3rem;
+	justify-items: center;
+}
+
+.title-footer {
+	font-weight: 600;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+}
+
+.contact-info,
+.information,
+.my-account,
+.newsletter {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.contact-info ul,
+.information ul,
+.my-account ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.contact-info ul li,
+.information ul li,
+.my-account ul li {
+	list-style: none;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 300;
+}
+
+.information ul li a,
+.my-account ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: 300;
+}
+
+.information ul li a:hover,
+.my-account ul li a:hover {
+	color: var(--dark-color);
+}
+
+.social-icons {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.social-icons span {
+	border-radius: 50%;
+	width: 3rem;
+	height: 3rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-icons span i {
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+.content p {
+	font-size: 1.4rem;
+	color: #fff;
+	font-weight: 300;
+}
+
+.content input {
+	outline: none;
+	background: none;
+	border: none;
+	border-bottom: 2px solid #d2b495;
+	cursor: pointer;
+	padding: 0.5rem 0 1.2rem;
+	color: var(--dark-color);
+	display: block;
+	margin-bottom: 3rem;
+	margin-top: 2rem;
+	width: 100%;
+	font-family: inherit;
+}
+
+.content input::-webkit-input-placeholder {
+	color: #eee;
+}
+
+.content button {
+	border: none;
+	background-color: #000;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 1rem 3rem;
+	border-radius: 2rem;
+	font-size: 1.4rem;
+	font-family: inherit;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.content button:hover {
+	background-color: var(--background-color);
+	color: var(--primary-color);
+}
+
+.copyright {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2rem;
+
+	border-top: 1px solid #d2b495;
+}
+
+.copyright p {
+	font-weight: 400;
+	font-size: 1.6rem;
+}
+
+/* Media queries para dispositivos móviles y tablets */
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .footer {
+    padding: 2rem;
+  }
+
+  .menu-footer {
+    gap: 2rem;
+  }
+
+  .social-icons span {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+/* Media queries para dispositivos de tamaño medio, laptops y pantallas grandes */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+	.footer {
+	  padding: 2.5rem;
+	}
+  
+	.menu-footer {
+	  grid-template-columns: repeat(2, 1fr);
+	  gap: 3rem;
+	}
+  
+	.social-icons span {
+	  width: 3rem;
+	  height: 3rem;
+	}
+  }
+  
+  /* Media queries para pantallas extra grandes */
+  @media screen and (min-width: 1201px) {
+	.footer {
+	  padding: 3rem;
+	}
+  
+	.menu-footer {
+	  grid-template-columns: repeat(4, 1fr);
+	  gap: 4rem;
+	}
+  
+	.social-icons span {
+	  width: 3.5rem;
+	  height: 3.5rem;
+	}
+  }
+  
+
+
+/* Hasta acá se notan los rugidos de tripas, que diga, lo de mision, vision, etc. */
+
+.contenedor {
+	max-width: 1200px; /* Ancho máximo del contenedor */
+	margin: 0 auto; /* Centra el contenedor */
+	padding: 0 20px; /* Espacio entre borde izquierdo y derecho */
+}
+
+.miytitulo {
+	font-size: 24px; /* Tamaño de los títulos */
+	color: #2556BD; /* Nuevo color de los títulos */
+	text-align: center; /* Centrado de los títulos */
+	margin-bottom: 10px;
+}
+
+.miyparrafo {
+	font-size: 16px; /* Tamaño de los textos */
+	text-align: justify; /* Textos justificados */
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+
+.form-container {
+	width: 400px;
+	background: linear-gradient(#212121, #212121) padding-box,
+				linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+	border: 2px solid transparent;
+	padding: 32px 24px;
+	font-size: 14px;
+	font-family: inherit;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	box-sizing: border-box;
+	border-radius: 16px;
+	background-size: 200% 100%;
+	animation: gradient 5s ease infinite;
+  }
+  
+  @keyframes gradient {
+	0% {
+	  background-position: 0% 50%;
+	}
+  
+	50% {
+	  background-position: 100% 50%;
+	}
+  
+	100% {
+	  background-position: 0% 50%;
+	}
+  }
+  
+
+  /* Buzón de Sugerencias*/
+  
+/* Estilos base de la tarjeta */
+.card {
+	width: 300px;
+	height: 400px;
+	margin: 0 auto;
+	background-color: #24233b;
+	border-radius: 8px;
+	z-index: 1;
+	box-shadow: 0px 10px 10px rgb(73, 70, 92);
+	transition: 0.5s;
+}
+
+/* Efecto de desplazamiento en el hover */
+.card:hover {
+	transform: translateY(-7px);
+	box-shadow: 0px 10px 10px black;
+}
+
+/* Contenido superior de la tarjeta */
+.top {
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+}
+
+/* Estilos de los círculos */
+.circle {
+	padding: 0 4px;
+}
+
+.circle2 {
+	display: inline-block;
+	align-items: center;
+	width: 10px;
+	height: 10px;
+	padding: 1px;
+	border-radius: 5px;
+}
+
+.red {
+	background-color: #ff605c;
+}
+
+.yellow {
+	background-color: #ffbd44;
+}
+
+.green {
+	background-color: #00ca4e;
+}
+
+/* Estilos del encabezado */
+.header {
+	margin: 5px;
+	margin-top: 5px;
+	border-radius: 5px;
+}
+
+#title2 {
+	color: white;
+	padding-left: 50px;
+	font-size: 15px;
+}
+
+/* Estilos del contenedor de código */
+.code-container {
+	text-align: center;
+}
+
+#code {
+	width: 270px;
+	height: 350px;
+	resize: none;
+	background-color: rgb(73, 70, 92);
+	border-radius: 5px;
+	border: none;
+	color: white;
+	padding: 10px;
+}
+
+#code:focus {
+	outline: none !important;
+}
+
+/* Media queries para hacer responsive */
+@media screen and (max-width: 480px) {
+	.card {
+		transform: translateY(-1000px); /* Mueve la sección verticalmente fuera de la pantalla */
+	}
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.card {
+		width: 300px;
+		height: 400px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.card {
+		width: 350px;
+		height: 450px;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+	.card {
+		width: 400px;
+		height: 500px;
+	}
+}
+
+@media screen and (min-width: 1201px) {
+	.card {
+		width: 270px;
+		height: 370px;
+	}
+}
+
+
+
+
+
+
